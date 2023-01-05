@@ -52,10 +52,30 @@ h4 {
 }
 
 h2{
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 700;
     line-height: 43.28px;
 }
+
+.view-more{
+    display: block;
+    text-align: center;
+    font-size: 0.885625em;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 2em;
+}
+
+@media (min-width: 625px){
+    h2{
+        font-size: 40px;
+    }
+
+    .view-more{
+        margin-bottom: 3em;
+    }
+}
+
 
 .footer-p{
     color: #ECECEC;
@@ -69,7 +89,6 @@ h2{
     font-size: 12px;
 }
 
-
 /* ==================
         header
    ================== */
@@ -78,7 +97,6 @@ header{
     justify-content: space-between;
     margin: 0 3.3125em;
     padding: 1em 0;
-    /* border: 1px solid red; */
 }
 
 .title{
@@ -109,16 +127,33 @@ nav ul {
 /* ==================
         article
    ================== */
+article{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    justify-items: center;
+    gap: 1.8em;
+    padding: 1.5em;
+}
+@media (min-width: 625px){
+    article{
+        padding: 2em;
+    }
+}
+@media (min-width: 825px){
+    article{
+        padding: 3em;
+    }
+}
+
 .card{
     display: flex;
     flex-direction: column;
-    width: 309px;
-    border: 1px solid greenyellow;
+    max-width: 480px;
 }
 
 .card-img{
     order: -2;
-    width: 309px;
+    max-width: 480px;
     height: 232px;
     object-fit: cover;
 }
@@ -134,9 +169,20 @@ nav ul {
 .short-description{
     color: #FFFFFF;
     text-shadow: 0px 0px 5px rgb(248, 248, 247);
-    width: 750px;
-    padding: 288px 0 0 53px;
+    max-width: 450px;
+    padding: 250px 0 0 23px;
 }   
+@media (min-width: 625px){
+    .short-description{
+        max-width: 580px;
+        padding: 260px 0 0 53px;
+    }
+}
+@media (min-width: 825px){
+    .short-description{
+        max-width: 720px;
+    }
+}
 
 /* ==================
         footer 
@@ -150,3 +196,52 @@ footer{
     background: #202020;
     height: 105px;
 }   
+
+
+
+
+/* =======================================
+            blog.html page
+   =======================================*/
+
+/*  typography  */
+.view-full-article h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #151515;
+    width: 90%;
+    margin: .5em auto;
+}   
+
+.view-full-article p,
+h3{
+    width: 90%;
+    margin: 1em auto;
+}
+
+.view-full-article img{
+    margin: 1.5em 0;
+    display: block;
+}
+
+.view-full-article{
+    background-color: #fafafa;
+    padding: 1em 0;
+    /* border: 1px solid black; */
+}
+
+.recent h3{
+    text-align: center;
+    margin: .3em auto;
+}
+
+@media (min-width: 625px){
+    .view-full-article h1 {
+        font-size: 2.25rem;
+    }
+
+    .view-full-article h3,
+    .recent h3{
+        font-size: 1.5rem;
+    }  
+}
