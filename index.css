@@ -41,7 +41,12 @@ nav ul li a {
     font-size: 1rem;
     color: #090909;
     font-weight: 700;
-    line-height: 2em;
+    border-bottom: 1px solid gray;
+}
+
+nav ul li a:hover,
+nav ul li a:focus{
+    color: blue;
 }
 
 h4 {
@@ -110,21 +115,50 @@ h2 {
    ================== */
 header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     margin: 0 3.3125em;
     padding: 1em 0;
+}
+
+@media (min-width: 625px) {
+    header {
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+    }
 }
 
 .title {
     display: flex;
     align-items: center;
     gap: .1em;
+    align-self: flex-start;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid black;
+    width: 100%;
 }
 
 nav ul {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1em;
     list-style: none;
+}
+
+@media (min-width: 625px) {
+    nav ul {
+        flex-direction: row;
+    }
+
+    .title {
+        width: 50%;
+        padding-bottom: 0;
+        border-bottom: none;
+        margin-bottom: 0;
+    }
 }
 
 /* ==================
